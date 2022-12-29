@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+
+  nginx:
+    container_name: instagramclone_proxy
+    image: nginx:stable-alpine
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+
+  webserver:
+    container_name: instagramclone_webserver
+    image: instagram_clone:0.0.2
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+volumes:
+  nginx:
