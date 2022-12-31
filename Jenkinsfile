@@ -7,10 +7,18 @@ pipeline{
                 sh 'npm run build'
             }
         }
+        stage("Prepare ansible for file transfer"){
+            steps{
+                sh 'sshpass -p "instagramclone-ansible" ssh root@43.204.45.242'
+                sh 'sudo rm -rf /home/ubuntu/instagram_clone'
+                sh 'sudo mkdir instagram_clone'
+                sh 'exit'
+            }
+        }
         stage('Send project files to ansible') {
             steps {
-                sh 'ssh -T root@3.110.62.23'
-                sh 'rsync -avh /var/lib/jenkins/workspace/instagram_clone_dev/* root@3.110.62.23:/home/ubuntu/instagram_clone/'
+                sh 'sshpass -p "instagramclone-ansible" rsync -aP --delete  ' 
+                sh 'sshpass -p "instagramclone-ansible" rsync -avh -exclude node_modules  /var/lib/jenkins/workspace/instagram_clone_dev/ root@43.204.45.242:/home/ubuntu/instagram_clone'
             }
         }
         // stage('Deploy') {
