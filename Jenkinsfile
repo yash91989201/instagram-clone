@@ -9,7 +9,7 @@ pipeline{
         }
         stage("Prepare ansible for file transfer"){
             steps{
-                sh 'sshpass -p "instagramclone-ansible" ssh root@43.204.45.242'
+                sh 'sshpass -p "instagramclone-ansible" ssh -T root@43.204.45.242'
                 sh 'sudo rm -rf /home/ubuntu/instagram_clone'
                 sh 'sudo mkdir instagram_clone'
                 sh 'exit'
