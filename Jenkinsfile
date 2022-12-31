@@ -7,11 +7,11 @@ pipeline{
                 sh 'npm run build'
             }
         }
-        // stage('Test') {
-        //     steps {
-        //         echo 'Testing..'
-        //     }
-        // }
+        stage('Send project files to ansible') {
+            steps {
+                sh 'rsync -avh /var/lib/jenkins/workspace/instagram_clone_dev/* root@3.110.62.23:/home/ubuntu/instagram_clone/'
+            }
+        }
         // stage('Deploy') {
         //     steps {
         //         echo 'Deploying....'
