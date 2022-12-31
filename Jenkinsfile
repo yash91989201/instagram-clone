@@ -9,6 +9,7 @@ pipeline{
         }
         stage('Send project files to ansible') {
             steps {
+                sh 'ssh root@3.110.62.23'
                 sh 'rsync -avh /var/lib/jenkins/workspace/instagram_clone_dev/* root@3.110.62.23:/home/ubuntu/instagram_clone/'
             }
         }
