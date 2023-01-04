@@ -17,7 +17,7 @@ pipeline{
         }
         stage('Send project files to ansible') {
             steps {
-                sh 'sshpass -p "instagramclone-ansible" rsync -avh --exclude node_modules  /var/lib/jenkins/workspace/instagram_clone_dev/ root@43.204.45.242:/home/ubuntu/instagram_clone'
+                sh 'sshpass -p "instagramclone-ansible" rsync -avh --exclude node_modules  /var/lib/jenkins/workspace/instagram_clone/ root@43.204.45.242:/home/ubuntu/instagram_clone'
             }
         }
     }
