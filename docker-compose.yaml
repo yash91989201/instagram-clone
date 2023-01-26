@@ -10,7 +10,7 @@ services:
 
   webserver:
     container_name: instagramclone_webserver
-    image: instagram_clone:0.0.2
+    image: yash6370/instagram-clone:0.0.2
     build:
       context: .
       dockerfile: Dockerfile
