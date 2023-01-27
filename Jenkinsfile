@@ -37,10 +37,8 @@ pipeline{
                             docker tag instagram_clone:0.0.2 yash6370/instagram-clone
                             echo dckr_pat_9sKgLA6xTn4A9uhR4pzQjo1-x2g | docker login -u yash6370 --password-stdin
                             docker push yash6370/instagram-clone
+                            docker logout
                         '''
-                    }
-                    stage('Logout from docker hub'){
-                        sshCommand remote: remote, command: 'docker logout'
                     }
                 }
             }
