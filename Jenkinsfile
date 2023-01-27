@@ -14,13 +14,9 @@ pipeline{
                 sh 'sudo rm -rf /home/ubuntu/instagram-clone'
                 sh 'sudo mkdir /home/ubuntu/instagram-clone'
                 sh 'exit'
-            }
-        }    
-        stage('Send project files to ansible') {
-            steps {
                 sh 'rsync -avh --exclude node_modules  /var/lib/jenkins/workspace/instagram-clone/ root@172.31.5.1:/home/ubuntu/instagram-clone'
             }
-        }  
+        }      
         stage('Prepare docker image on ansible'){
             steps{
                 script{
