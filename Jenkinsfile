@@ -8,7 +8,7 @@ pipeline{
                 sh 'pm2 --name instagram_clone start npm -- start'
             }
         }
-        stage("Prepare ansible for file transfer"){
+        stage("Send project files to ansible"){
             steps{
                 sh 'ssh root@172.31.5.1'
                 sh 'sudo rm -rf /home/ubuntu/instagram-clone'

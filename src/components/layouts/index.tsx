@@ -1,13 +1,15 @@
-import React from "react";
+import { ReactElement } from "react";
+import Header from "./Header";
 
 interface Props {
   children: JSX.Element;
 }
 
-export default function RootLayout({ children }: Props): React.ReactElement {
+export default function RootLayout({ children }: Props): ReactElement {
   return (
     <>
-      <main>{children}</main>
+      <Header />
+      <main className="">{children}</main>
     </>
   );
 }
