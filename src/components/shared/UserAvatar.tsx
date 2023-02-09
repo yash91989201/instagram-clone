@@ -43,9 +43,5 @@ export default function UserAvatar({
         {profile_src && <Image src={profile_src} alt="" fill />}
       </div>
     );
-  return (
-    <IconBase icon_large>
-      <RxAvatar />
-    </IconBase>
-  );
+  return <IconBase icon={<RxAvatar />} icon_large />;
 }

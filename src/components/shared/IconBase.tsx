@@ -1,14 +1,15 @@
 import { ReactElement, ReactNode } from "react";
+import { IconType } from "react-icons/lib";
 
 interface IconBase {
-  children: ReactNode;
+  icon: ReactElement;
   has_notification?: boolean;
   notification_count?: number;
   icon_large?: boolean;
 }
 
 export default function IconBase({
-  children,
+  icon,
   has_notification,
   notification_count,
   icon_large,
@@ -26,7 +27,7 @@ export default function IconBase({
         </span>
       )}
       <span className={`${icon_large ? "text-3xl  " : "text-lg md:text-xl"}`}>
-        {children}
+        {icon}
       </span>
     </div>
   );
