@@ -11,22 +11,26 @@ import {
 import { BsInstagram } from "react-icons/bs";
 import { FiSend } from "react-icons/fi";
 import { MdGroups } from "react-icons/md";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { S3_STATIC_ASSET_URL } from "config";
 
 export default function Index(): React.ReactElement {
   return (
-    <header className="shadow-md bg-slate-50">
-      <div className="flex items-center justify-between max-w-5xl px-2 py-4 mx-auto">
+    <header className="sticky top-0 z-50 px-3 bg-white border-b shadow-md lg:px-0">
+      <div className="flex items-center justify-between max-w-5xl py-4 mx-auto">
         {/* logo wrapper */}
-        <div>
+        <div className="">
           <h2 className="hidden text-lg font-medium md:block md:text-xl">
             Instagram
           </h2>
-          <BsInstagram className="text-4xl md:hidden" />
+          <IconBase
+            icon={<BsInstagram className="block md:hidden" />}
+            icon_large
+          />
         </div>
         <SearchBox />
-        <div className="flex items-center space-x-3">
-          <div className="flex items-center space-x-2 md:space-x-4 ">
+        <div className="flex items-center space-x-3 ">
+          <div className="items-center hidden md:flex md:space-x-3">
             <IconBase icon={<AiFillHome />} />
             <IconBase
               icon={<FiSend />}
@@ -36,6 +40,9 @@ export default function Index(): React.ReactElement {
             <IconBase icon={<AiOutlinePlusCircle />} />
             <IconBase icon={<MdGroups />} />
             <IconBase icon={<AiOutlineHeart />} />
+          </div>
+          <div className="block md:hidden">
+            <IconBase icon={<RxHamburgerMenu className="text-2xl" />} />
           </div>
           <UserAvatar
             profile_src={`${S3_STATIC_ASSET_URL}/images/dummy_profile.jpg`}
