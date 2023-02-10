@@ -9,7 +9,7 @@ import "styles/globals.css";
 export default function App({ Component, pageProps }: AppProps) {
   const route = useRouter();
 
-  if (route.pathname === "/") return <Component {...pageProps} />;
+  // if (route.pathname === "/") return <Component {...pageProps} />;
 
   return (
     <RootLayout>
