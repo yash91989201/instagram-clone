@@ -17,7 +17,7 @@ import { S3_STATIC_ASSET_URL } from "config";
 export default function Index(): React.ReactElement {
   return (
     <header className="sticky top-0 z-50 px-3 bg-white border-b shadow-md lg:px-0">
-      <div className="flex items-center justify-between max-w-5xl py-4 mx-auto">
+      <div className="flex items-center justify-between max-w-6xl py-4 mx-auto">
         {/* logo wrapper */}
         <div className="">
           <h2 className="hidden text-lg font-medium md:block md:text-xl">

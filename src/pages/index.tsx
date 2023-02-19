@@ -1,3 +1,4 @@
+import Feed from "components/Feed";
 import Head from "next/head";
 
 export default function Home(): React.ReactElement {
@@ -9,7 +10,7 @@ export default function Home(): React.ReactElement {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="favicon.ico" />
       </Head>
-      this is some text
+      <Feed />
     </>
   );
 }
